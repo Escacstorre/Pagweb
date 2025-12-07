@@ -24,7 +24,7 @@
                 <li class="desplegable">
                     <a href="Campionats/Campionats.html" class="menu-link">
                         Campionats 
-                        <svg class="icono-flecha" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="icono-flecha-pc" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
@@ -50,11 +50,18 @@
                     <li><a href="Joc\Joc.html">Joc</a></li>
                     <!-- Desplegable en versión móvil -->
                     <li>
-                        <details>
-                            <summary><a href="Campionats\Campionats.html">Campionats</a></summary>
-                            <ul>
-                                <li><a href="Campionats\Inscripcions\Inscripcions.html">Inscripcions</a></li>
-                                <li><a href="Campionats\Calendari\Calendari.html">Calendari</a></li>
+                        <details class="mobile-desplegable">
+                            <summary>
+                                <svg class="icono-flecha-mobil" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Campionats
+                            </summary>
+                            
+                            <ul class="submenu-intern">
+                                <li><a href="Campionats/Campionats.html">veure tot</a></li> 
+                                <li><a href="Campionats/Inscripcions/Inscripcions.html">Inscripcions</a></li>
+                                <li><a href="Campionats/Calendari/Calendari.html">Calendari</a></li>
                             </ul>
                         </details>
                     </li>
