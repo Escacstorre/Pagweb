@@ -163,13 +163,13 @@ nav {
     cursor: pointer;
 }
 
-.icono-flecha {
+.icono-flecha-pc {
     width: 1.25rem;
     height: 1.25rem;
     transition: transform 0.3s ease;
 }
 
-.desplegable:hover .icono-flecha {
+.desplegable:hover .icono-flecha-pc {
     transform: rotate(180deg);
 }
 
@@ -215,6 +215,67 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+/* --- Estilos para el desplegable móvil (<details>) --- */
+
+/* 1. Estilo del contenedor (Summary) */
+.mobile-desplegable summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--color-text-secundari);
+    padding: 0.5rem 0;
+    
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+/* Ocultar triángulo nativo en Safari/Chrome */
+.mobile-desplegable summary::-webkit-details-marker {
+    display: none;
+}
+
+/* 2. Estilo de la flecha (.icono-flecha-mobil) */
+.icono-flecha-mobil {
+    width: 1.25rem; 
+    height: 1.25rem;
+    
+    /* Animación suave */
+    transition: transform 0.3s ease;
+    
+    /* Color inicial */
+    color: var(--color-text-secundari);
+}
+
+/* 3. Rotación cuando el menú está abierto ([open]) */
+/* Cuando el details tiene el atributo 'open', rotamos la flecha que hay dentro */
+.mobile-desplegable[open] .icono-flecha-mobil {
+    transform: rotate(180deg);
+    color: var(--color-primari);
+}
+
+/* Cambiar color del texto también al abrirse */
+.mobile-desplegable[open] summary {
+    color: var(--color-primari);
+}
+
+/* 4. Estilo de la lista interna (El submenú) */
+.submenu-intern {
+    background-color: var(--color-fons-gris);
+    margin: 0 -1rem;
+    padding: 0.5rem 2rem;
+    border-top: 0.0625rem solid var(--color-vora);
+    border-bottom: 0.0625rem solid var(--color-vora);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.submenu-intern li a {
+    font-size: 0.9rem;
+    color: var(--color-text-secundari);
 }
 
 /* --- MEDIA QUERIES (Tablet i Mobile) --- */
