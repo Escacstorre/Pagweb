@@ -221,42 +221,40 @@ nav {
 
 /* 1. Estilo del contenedor (Summary) */
 .mobile-desplegable summary {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    
     list-style: none;
     cursor: pointer;
     font-weight: 500;
     color: var(--color-text-secundari);
     padding: 0.5rem 0;
-    
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
 }
 
-/* Ocultar triángulo nativo en Safari/Chrome */
 .mobile-desplegable summary::-webkit-details-marker {
     display: none;
 }
 
-/* 2. Estilo de la flecha (.icono-flecha-mobil) */
+/* 2. Estilo de la Flecha SVG (.icono-flecha-mobil) */
 .icono-flecha-mobil {
     width: 1.25rem; 
     height: 1.25rem;
+    min-width: 1.25rem;
     
-    /* Animación suave */
+    flex-shrink: 0; 
+    
     transition: transform 0.3s ease;
-    
-    /* Color inicial */
     color: var(--color-text-secundari);
 }
 
 /* 3. Rotación cuando el menú está abierto ([open]) */
-/* Cuando el details tiene el atributo 'open', rotamos la flecha que hay dentro */
 .mobile-desplegable[open] .icono-flecha-mobil {
-    transform: rotate(180deg);
+    transform: rotate(90deg); 
+    
     color: var(--color-primari);
 }
 
-/* Cambiar color del texto también al abrirse */
 .mobile-desplegable[open] summary {
     color: var(--color-primari);
 }
