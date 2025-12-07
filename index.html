@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Estructura Básica - Club d'Escacs</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+    </head>
+    <body>
+        <!-- 1. NAV: Barra de navegación superior -->
+        <nav>
+            <!-- A. Logo -->
+            <div class="nav-logo">
+                <a href="index.html"><img src="Img/Logo/Club d_Escacs Torredembarra torre.png" alt="Logo Club d'Escacs"></a>
+            </div>
+
+            <!-- B. Menú Escritorio (Visible en pantallas grandes) -->
+            <ul class="nav-pc">
+                <li><a href="http://www.escacs.cat/index.php/component/fce?op=2&idClub=272">Plantilla</a></li>
+                <li><a href="Noticies\Noticies.html">Notícies</a></li>
+                <li><a href="Joc\Joc.html">Joc</a></li>
+                
+                <!-- Estructura del Desplegable -->
+                <li class="desplegable">
+                    <a href="Campionats/Campionats.html" class="menu-link">
+                        Campionats 
+                        <svg class="icono-flecha" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <ul class="desplegable-menu">
+                        <li><a href="Campionats\Inscripcions\Inscripcions.html">Inscripcions</a></li>
+                        <li><a href="Campionats\Calendari\Calendari.html">Calendari</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="Nosaltres\Nosaltres.html">Sobre Nosaltres</a></li>
+                <li class="boto-contacta"><a href="Contacta\Contacta.html">Contacta'ns</a></li>
+            </ul>
+
+            <!-- C. Controles Móvil (Visible en pantallas pequeñas) -->
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="mobile-menu-btn">☰</label>
+
+            <!-- D. Menú Móvil (Contenedor que se muestra/oculta) -->
+            <div class="nav-mobile">
+                <ul>
+                    <li><a href="http://www.escacs.cat/index.php/component/fce?op=2&idClub=272">Plantilla</a></li>
+                    <li><a href="Noticies\Noticies.html">Notícies</a></li>
+                    <li><a href="Joc\Joc.html">Joc</a></li>
+                    <!-- Desplegable en versión móvil -->
+                    <li>
+                        <details>
+                            <summary><a href="Campionats\Campionats.html">Campionats</a></summary>
+                            <ul>
+                                <li><a href="Campionats\Inscripcions\Inscripcions.html">Inscripcions</a></li>
+                                <li><a href="Campionats\Calendari\Calendari.html">Calendari</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li><a href="Nosaltres\Nosaltres.html">Sobre Nosaltres</a></li>
+                    <li><a href="Contacta\Contacta.html">Contacta'ns</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- 2. HEADER: Capçalera (Títol i botó principal) -->
+        <header class="capcalera-inici">
+            <h1>Benvinguts al Club d'Escacs Torredembarra</h1>
+            <a href="Joc/Joc.html" class="boto-joc">Juga ara</a>
+        </header>
+
+        <!-- Contenedor para distribuir Main y Aside (usualmente un div con grid/flex) -->
+        <div>
+            
+            <!-- 3. MAIN: Contenido principal (Columna izquierda) -->
+            <main>
+                
+                <!-- Sección de Noticias -->
+                <section>
+                    <h2>Notícies</h2>
+                    
+                    <!-- Artículos individuales -->
+                    <article>
+                        <h3>Noticia 1</h3>
+                    </article>
+
+                    <article>
+                        <h3>Noticia 2</h3>
+                    </article>
+
+                    <article>
+                        <h3>Noticia 3</h3>
+                    </article>
+                </section>
+
+                <!-- Sección de Destacados (Calendario, Joc, Campionats) -->
+                <section>
+                    <!-- Bloques destacados -->
+                </section>
+
+            </main>
+
+            <!-- 4. ASIDE: Barra lateral (Columna derecha) -->
+            <aside>
+                <!-- Widgets o Carteles -->
+            </aside>
+
+        </div>
+
+        <!-- 5. FOOTER: Pie de página -->
+        <footer>
+            <!-- Copyright, Redes Sociales, Scripts -->
+        </footer>
+
+    </body>
+</html>

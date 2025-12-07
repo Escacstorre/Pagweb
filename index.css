@@ -1,0 +1,348 @@
+/* --- VARIABLES GLOBALS --- */
+:root {
+    /* 1. Colors de Marca */
+    --color-primari: #3FA9F5;
+    --color-primari-hover: #2b8ecc;
+
+    /* 2. Colors de Text */
+    --color-text-principal: #333333;
+    --color-text-secundari: #4b5563;
+    --color-text-suau: #9ca3af;
+    --color-text-invers: white;
+
+    /* 3. Colors de Fons */
+    --color-fons-pagina: white;
+    --color-fons-panell: white;
+    --color-fons-clar: #f9fafb;
+    --color-fons-fosc: #1f2937;
+    --color-fons-gris: #f3f4f6;
+
+    /* 4. Vores i Ombres (Tot relatiu) */
+    --color-vora: #e5e7eb;
+    --ombra: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1);
+    --ombra-petita: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--color-fons-pagina);
+    color: var(--color-text-principal);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* --- 0. Lógica del menú mòbil --- */
+#menu-toggle {
+    display: none; /* Amaguem la casella de verificació real */
+}
+
+/* El botó hamburguesa (Label) està ocult per defecte en PC */
+.mobile-menu-btn {
+    display: none; 
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--color-text-principal);
+    user-select: none;
+}
+
+/* --- 1. NAV (Navegació) --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 4.375rem;
+    border-bottom: 0.0625rem solid var(--color-vora);
+    background-color: var(--color-fons-panell);
+    position: relative;
+    z-index: 100;
+}
+
+/* A. Logo */
+.nav-logo a {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--color-fons-fosc);
+    text-transform: uppercase;
+    letter-spacing: -0.03rem;
+}
+
+.nav-logo img {
+    height: auto;
+    max-height: 3.125rem;
+}
+
+/* B. Menú Escriptori */
+.nav-pc {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-pc > li > a, 
+.desplegable > button {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-secundari);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav-pc > li > a:hover,
+.desplegable > button:hover {
+    color: var(--color-primari);
+}
+
+/* Estils del Desplegable (Escriptori) */
+.desplegable { position: relative; }
+
+.desplegable-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--color-fons-panell);
+    border: 0.0625rem solid var(--color-vora);
+    border-radius: 0.5rem;
+    box-shadow: var(--ombra);
+    padding: 0.5rem 0;
+    margin-top: 0.625rem;
+    min-width: 11.25rem; 
+}
+
+/* El pont invisible (per a evitar que es tanqui) */
+.desplegable-menu::before {
+    content: "";
+    position: absolute;
+    top: -0.9375rem;
+    left: 0;
+    width: 100%;
+    height: 1.25rem;
+}
+
+.desplegable:hover .desplegable-menu {
+    display: block;
+}
+
+.desplegable-menu li a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text-secundari);
+}
+
+.desplegable-menu li a:hover {
+    background-color: var(--color-fons-clar);
+    color: var(--color-primari);
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+    text-decoration: none;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icono-flecha {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.desplegable:hover .icono-flecha {
+    transform: rotate(180deg);
+}
+
+/* Botó Contacta */
+.nav-pc .boto-contacta a {
+    background-color: var(--color-primari);
+    color: var(--color-text-invers) !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s;
+}
+
+.nav-pc .boto-contacta a:hover {
+    background-color: var(--color-primari-hover);
+    color: var(--color-text-invers) !important;
+}
+
+/* C. Menú Mòbil (Contenidor) */
+/* C. Menú Mòbil (Contenidor) */
+.nav-mobile {
+    display: none; /* Ocult per defecte */
+    position: absolute;
+    
+    top: 100%; 
+    right: 1.5rem;
+    left: auto;
+    
+    width: auto; 
+    min-width: 15rem;
+    max-width: 90vw;
+    
+    background: var(--color-fons-panell);
+    border: 0.0625rem solid var(--color-vora);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: var(--ombra);
+    z-index: 99;
+    
+    margin-top: 0.5rem; 
+}
+
+.nav-mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* --- MEDIA QUERIES (Tablet i Mobile) --- */
+/*
+   Aquesta regla s'activa si:
+   1. Pantalla < 1024px
+   2. O és tàctil (sense ratolí)
+   3. O el punter és gruixut (dit)
+*/
+@media (max-width: 64em), (hover: none), (pointer: coarse) {
+    
+    /* 1. Amaguem el menú d'escriptori */
+    .nav-pc { 
+        display: none !important; 
+    }
+
+    /* 2. Mostrem el botó hamburguesa (Label del checkbox) */
+    .mobile-menu-btn { 
+        display: block; 
+    }
+    
+    /* 3. Si l'input està marcat, mostrem el menú */
+    #menu-toggle:checked ~ .nav-mobile {
+        display: block;
+    }
+
+    /* Layout general a una columna */
+    body > div {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- 2. HEADER (Capçalera) --- */
+.capcalera {
+    background-color: var(--color-primari);
+    color: var(--color-text-invers);
+    text-align: center;
+}
+
+.capcalera::after {
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 60 / 17; 
+    background-image: url('Img/header.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.capcalera-inici {
+    background-color: var(--color-primari);
+    color: var(--color-text-invers);
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+/* Botó Juga ara */
+.boto-joc a {
+    background-color: var(--color-fons-gris);
+    color: var(--color-primari) !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s;
+}
+.boto-joc a:hover {
+    background-color: var(--color-primari-hover);
+    color: var(--color-text-invers) !important;
+}
+
+/* --- LAYOUT PRINCIPAL (Grid) --- */
+body > div {
+    max-width: 90%;
+    margin: 2rem auto;
+    width: 100%;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    flex-grow: 1;
+}
+
+/* --- 3. MAIN --- */
+main h2 {
+    color: var(--color-primari);
+    border-bottom: 0.125rem solid var(--color-vora);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+article {
+    background: var(--color-fons-panell);
+    border: 0.0625rem solid var(--color-vora);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--ombra-petita);
+}
+
+/* --- 4. ASIDE --- */
+aside {
+    background-color: var(--color-fons-clar);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    height: fit-content;
+    border: 0.0625rem solid var(--color-vora);
+}
+
+aside::before {
+    content: "Barra Lateral";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--color-text-suau);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* --- 5. FOOTER --- */
+footer {
+    background-color: var(--color-fons-fosc);
+    color: var(--color-text-suau);
+    padding: 3rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer::after {
+    content: "© 2023 Club d'Escacs";
+}
