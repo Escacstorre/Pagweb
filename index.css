@@ -198,8 +198,6 @@ nav {
     left: auto;
     
     width: auto; 
-    min-width: 15rem;
-    max-width: 90vw;
     
     background: var(--color-fons-panell);
     border: 0.0625rem solid var(--color-vora);
@@ -225,7 +223,7 @@ nav {
     justify-content: flex-start; 
     align-items: center;
     gap: 0.75rem;
-    
+
     list-style: none;
     cursor: pointer;
     font-weight: 500;
@@ -239,8 +237,6 @@ nav {
 
 /* 2. Estilo de la Flecha SVG (.icono-flecha-mobil) */
 .icono-flecha-mobil {
-    
-    transform: rotate(-90deg); 
     width: 1.25rem; 
     height: 1.25rem;
     min-width: 1.25rem;
@@ -253,7 +249,7 @@ nav {
 
 /* 3. Rotación cuando el menú está abierto ([open]) */
 .mobile-desplegable[open] .icono-flecha-mobil {
-    transform: rotate(0deg); 
+    transform: rotate(180deg); 
     
     color: var(--color-primari);
 }
