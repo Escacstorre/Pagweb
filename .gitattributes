@@ -1,0 +1,2 @@
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+Assets/Video/XII_Obert_Llampec_Torredembarra(Fragment_del_directe).webm filter=lfs diff=lfs merge=lfs -text
