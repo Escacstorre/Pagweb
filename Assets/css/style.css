@@ -386,7 +386,7 @@ nav {
 
 /* --- 2. HEADER (Capçalera) --- */
 .capcalera {
-    background-color: var(--color-accent-fons);
+    background-color: var(--color-fons-pagina);
     color: var(--color-text-invers);
     text-align: center;
 }
@@ -396,7 +396,7 @@ nav {
     display: block;
     width: 100%;
     aspect-ratio: 60 / 17; 
-    background-image: url('Img/header.webp');
+    background-image: url('../Img/header.webp');
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center;
@@ -462,51 +462,6 @@ article {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     box-shadow: var(--ombra-petita);
-}
-
-.noticies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.noticies-grid h3 {
-    grid-column: 1 / -1;
-    width: 100%;
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-    color: var(--color-primari);
-}
-
-.noticies-grid article {
-    margin-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100%; 
-}
-
-.noticies-grid article h4 {
-    margin-bottom: 1rem;
-}
-
-.noticies-grid article p.data {
-    font-size: 0.85rem;
-    color: var(--color-text-suau);
-    margin-bottom: 1rem;
-}
-
-.noticies-grid article p {
-    color: var(--color-text-secundari);
-    line-height: 1.5;
-    font-size: smaller;
-}
-.noticies-grid article img {
-    width:100%;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-    box-shadow: var(--ombra-petita);
-    object-fit: cover;
 }
 
 
