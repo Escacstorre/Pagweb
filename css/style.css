@@ -464,14 +464,14 @@ article {
     box-shadow: var(--ombra-petita);
 }
 
-main section {
+.noticies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
-main section h3 {
+.noticies-grid h3 {
     grid-column: 1 / -1;
     width: 100%;
     margin-bottom: 0.5rem;
@@ -479,29 +479,29 @@ main section h3 {
     color: var(--color-primari);
 }
 
-main section article {
+.noticies-grid article {
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
     height: 100%; 
 }
 
-main section article h4 {
+.noticies-grid article h4 {
     margin-bottom: 1rem;
 }
 
-main section article p.data {
+.noticies-grid article p.data {
     font-size: 0.85rem;
     color: var(--color-text-suau);
     margin-bottom: 1rem;
 }
 
-main section article p {
+.noticies-grid article p {
     color: var(--color-text-secundari);
     line-height: 1.5;
     font-size: smaller;
 }
-main section article img {
+.noticies-grid article img {
     width:100%;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
