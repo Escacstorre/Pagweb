@@ -1,4 +1,3 @@
-
 .noticies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
@@ -42,4 +41,42 @@
     margin-bottom: 1rem;
     box-shadow: var(--ombra-petita);
     object-fit: cover;
+}
+
+/* --- Secció Taules --- */
+.taula-horari {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background-color: var(--color-fons-panell);
+    border: 1px solid var(--color-vora);
+    border-radius: 0.5rem;
+    box-shadow: var(--ombra-petita);
+    overflow: hidden;
+}
+
+.taula-horari th,
+.taula-horari td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-vora);
+}
+
+.taula-horari th {
+    background-color: var(--color-primari);
+    font-weight: 600;
+    color: var(--color-text-invers);
+    font-size: 1rem;
+}
+
+.taula-horari tr:last-child td {
+    border-bottom: none;
+}
+
+.taula-horari td {
+    color: var(--color-text-secundari);
+}
+
+.taula-horari tr:hover {
+    background-color: var(--color-fons-gris);
 }
