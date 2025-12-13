@@ -10,7 +10,7 @@
     </head>
     <body>
         <!-- Checkbox per al canvi de tema (clar/fosc) -->
-        <input type="checkbox" id="Canvi-theme" class="theme-checkbox">
+        <input type="checkbox" id="Canvi-theme" class="theme-checkbox" autocomplete="off">
         <!-- 1. NAV: Barra de navegació superior -->
         <nav>
             <!-- A. Logo -->
@@ -42,7 +42,7 @@
                 <li><a href="../Nosaltres.html">Sobre Nosaltres</a></li>
                 <li class="boto-contacta"><a href="../Contacta.html">Contacta'ns</a></li>
                 <li>
-                        <label for="Canvi-theme" class="theme-toggle-btn" style="justify-content: flex-start; gap: 10px; cursor: pointer; display: flex; align-items: center;">
+                        <label for="Canvi-theme" class="theme-toggle-btn">
                             
                             <svg class="icon-sun-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;">
                                 <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
@@ -86,7 +86,7 @@
                     <li><a href="../Nosaltres.html">Sobre Nosaltres</a></li>
                     <li><a href="../Contacta.html">Contacta'ns</a></li>
                     <li>
-                        <label for="Canvi-theme" class="theme-toggle-btn" style="justify-content: flex-start; gap: 10px; cursor: pointer; display: flex; align-items: center;">
+                        <label for="Canvi-theme" class="theme-toggle-btn">
                             
                             <svg class="icon-sun-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;">
                                 <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
@@ -114,7 +114,7 @@
             <!-- 3. MAIN: Contingut principal (Columna esquerra o adalt) -->
             <main>
                 <h2>Calendari</h2>
-                <iframe frameborder="0" height="800" scrolling="no" src="https://calendar.google.com/calendar/embed?height=800&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FMadrid&amp;showTitle=0&amp;showCalendars=0&amp;hl=ca&amp;showDate=1&amp;showNav=1&amp;showTabs=0&amp;showPrint=0&amp;showTz=0&amp;src=ZWRucm9pdWVzbDdnYXBuOTlwM211bmFrcWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23D50000" style="border-width:0" width="100%"></iframe>
+                <iframe frameborder="0" scrolling="no" src="https://calendar.google.com/calendar/embed?height=800&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FMadrid&amp;showTitle=0&amp;showCalendars=0&amp;hl=ca&amp;showDate=1&amp;showNav=1&amp;showTabs=0&amp;showPrint=0&amp;showTz=0&amp;src=ZWRucm9pdWVzbDdnYXBuOTlwM211bmFrcWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23D50000" style="width:100%; aspect-ratio:1/1;"></iframe>
             </main>
 
             <!-- 4. ASIDE: Contingut secundari (Columna dreta o abaix) -->
@@ -137,7 +137,7 @@
                     <div class="footer-text">
                         <p>Club d'Escacs Torredembarra</p>
                         <p>Carrer de Sant Jordi, 1, 43830 Torredembarra, Tarragona</p>
-                        <p>Email: <span class="email">escacstorre1@gmail.com</span></p>
+                        <p>Email: <a href="mailto:escacstorre1@gmail.com"><span class="email">escacstorre1@gmail.com</span></a></p>
                     </div>
                 </div>
 

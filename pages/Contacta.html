@@ -11,7 +11,7 @@
     </head>
     <body>
         <!-- Checkbox per al canvi de tema (clar/fosc) -->
-        <input type="checkbox" id="Canvi-theme" class="theme-checkbox">
+        <input type="checkbox" id="Canvi-theme" class="theme-checkbox" autocomplete="off"> 
         <!-- 1. NAV: Barra de navegació superior -->
         <nav>
             <!-- A. Logo -->
@@ -43,7 +43,7 @@
                 <li><a href="Nosaltres.html">Sobre Nosaltres</a></li>
                 <li class="boto-contacta"><a href="Contacta.html">Contacta'ns</a></li>
                 <li>
-                        <label for="Canvi-theme" class="theme-toggle-btn" style="justify-content: flex-start; gap: 10px; cursor: pointer; display: flex; align-items: center;">
+                        <label for="Canvi-theme" class="theme-toggle-btn">
                             
                             <svg class="icon-sun-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;">
                                 <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
@@ -87,7 +87,7 @@
                     <li><a href="Nosaltres.html">Sobre Nosaltres</a></li>
                     <li><a href="Contacta.html">Contacta'ns</a></li>
                     <li>
-                        <label for="Canvi-theme" class="theme-toggle-btn" style="justify-content: flex-start; gap: 10px; cursor: pointer; display: flex; align-items: center;">
+                        <label for="Canvi-theme" class="theme-toggle-btn">
                             
                             <svg class="icon-sun-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;">
                                 <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
@@ -117,19 +117,35 @@
                 <h2>Contacta'ns</h2>
                 <section>
                     <h3>Horari</h3>
-                    <table class="taula-horari">
-                        <tr>
-                            <th colspan="2">Horari Setmanal</th>
-                        </tr>
-                        <tr>
-                            <td>Dilluns, Dimarts, Dimecres, Dijous, Dissabte, Diumenge</td>
-                            <td>Tancat</td>
-                        </tr>
-                        <tr>
-                            <td>Divendres</td>
-                            <td>18:00 - 20:00</td>
-                        </tr>
-                    </table>
+                    <div class="taula-scroll-contenidor">
+                        <table class="taula-horari">
+                            <tr>
+                                <th colspan="7">Horari Setmanal</th>
+                            </tr>
+                            <tr>
+                                <td>Dilluns</td>
+                                <td>Dimarts</td>
+                                <td>Dimecres</td>
+                                <td>Dijous</td>
+                                <td>Divendres</td>
+                                <td>Dissabte</td>
+                                <td>Diumenge</td>
+                            </tr>
+                            <tr>
+                                <td>Tancat</td>
+                                <td>Tancat</td>
+                                <td>Tancat</td>
+                                <td>Tancat</td>
+                                <td>18:00 - 20:00</td>
+                                <td>Tancat</td>
+                                <td>Tancat</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h3>Mapa</h3>
+                    <iframe class="Mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1502.3001412559988!2d1.4000759252994912!3d41.14325108944996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3f0523d113cab%3A0x818eaee93a0ec254!2sCarrer+de+la+Capella%2C+6%2C+43830+Torredembarra%2C+Tarragona!5e0!3m2!1ses!2ses!4v1449678976982" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </section>
             </main>
 
@@ -153,7 +169,7 @@
                     <div class="footer-text">
                         <p>Club d'Escacs Torredembarra</p>
                         <p>Carrer de Sant Jordi, 1, 43830 Torredembarra, Tarragona</p>
-                        <p>Email: <span class="email">escacstorre1@gmail.com</span></p>
+                        <p>Email: <a href="mailto:escacstorre1@gmail.com"><span class="email">escacstorre1@gmail.com</span></a></p>
                     </div>
                 </div>
 
@@ -200,7 +216,7 @@
         <script>
             // Actualizar año automáticamente
             document.getElementById("year").textContent = new Date().getFullYear();
-        </script>
+        </script> 
 
     </body>
 </html>
