@@ -11,7 +11,7 @@
     </head>
     <body>
         <!-- Checkbox per al canvi de tema (clar/fosc) -->
-        <input type="checkbox" id="Canvi-theme" class="theme-checkbox">
+        <input type="checkbox" id="Canvi-theme" class="theme-checkbox" autocomplete="off"> 
         <!-- 1. NAV: Barra de navegació superior -->
         <nav>
             <!-- A. Logo -->
@@ -43,7 +43,7 @@
                 <li><a href="Nosaltres.html">Sobre Nosaltres</a></li>
                 <li class="boto-contacta"><a href="Contacta.html">Contacta'ns</a></li>
                 <li>
-                        <label for="Canvi-theme" class="theme-toggle-btn" style="justify-content: flex-start; gap: 10px; cursor: pointer; display: flex; align-items: center;">
+                        <label for="Canvi-theme" class="theme-toggle-btn">
                             
                             <svg class="icon-sun-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;">
                                 <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
@@ -87,7 +87,7 @@
                     <li><a href="Nosaltres.html">Sobre Nosaltres</a></li>
                     <li><a href="Contacta.html">Contacta'ns</a></li>
                     <li>
-                        <label for="Canvi-theme" class="theme-toggle-btn" style="justify-content: flex-start; gap: 10px; cursor: pointer; display: flex; align-items: center;">
+                        <label for="Canvi-theme" class="theme-toggle-btn">
                             
                             <svg class="icon-sun-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;">
                                 <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
@@ -115,11 +115,29 @@
             <!-- 3. MAIN: Contingut principal (Columna esquerra o adalt) -->
             <main>
                 <h2>Sobre Nosaltres</h2>
-                <p>El Club d'Escacs Torredembarra és una entitat esportiva dedicada a la promoció i pràctica dels escacs a la localitat de Torredembarra i les seves rodalies. Fundat l'any 1975, el club ha crescut fins a convertir-se en un referent en el món dels escacs a la província de Tarragona.</p>
-                <p>El nostre objectiu principal és fomentar l'afició pels escacs entre persones de totes les edats i nivells, oferint una plataforma on els jugadors puguin desenvolupar les seves habilitats, competir en tornejos i gaudir d'aquest apassionant joc estratègic.</p>
-                <p>El club organitza regularment tornejos locals, regionals i nacionals, així com activitats formatives com cursos i tallers per a jugadors de tots els nivells. A més, comptem amb una escola d'escacs que acull nens i joves, promovent el desenvolupament cognitiu i social a través dels escacs.</p>
-                <p>El Club d'Escacs Torredembarra està format per un grup divers de membres, des de principiants fins a jugadors experimentats, tots units per la passió pels escacs. La nostra comunitat és oberta i acollidora, i sempre estem encantats de donar la benvinguda a nous membres que comparteixin el nostre amor pel joc.</p>
-                <p>Ens sentim orgullosos del nostre llegat i del paper que hem jugat en la promoció dels escacs a la nostra regió. Amb una combinació d'esperit competitiu i camaraderia, el Club d'Escacs Torredembarra continua treballant per ser un punt de trobada per als amants dels escacs i per contribuir al creixement d'aquest esport fascinant.</p>
+                <section id="benvinguda-i-informacio-general">
+                    <h3><span class="titol-principal">♟️ Benvinguts/des a la web del Club d'Escacs Torredembarra ♟️</span></h2>
+                    
+                    <p>El <span class="nom-club">Club d'Escacs Torredembarra</span>, fundat l’any <span class="any-fundacio">1981</span>, és un dels clubs de referència de la demarcació de Tarragona. Costa molt anar a un campionat o torneig territorial i no trobar-hi jugadors i jugadores del nostre club. En aquest web hi trobareu tota mena d'informació relacionada amb el nostre club: d'àmbit social i esportiu. Són molts els tornejos on hi ha presència de jugadors i jugadores torrencs i aquí podreu consultar-ne els resultats. També podreu conèixer coses sobre la trajectòria dels nostres jugadors i jugadores i els integrants de la junta directiva de l'entitat, renovada a començaments del 2022. Finalment hi trobareu informació del buc insígnia del nostre club, l'<span class="nom-open">Open Internacional d'Escacs de Torredembarra</span> que aquest any arriba a la <span class="edicio-aniversari">XXV edició</span>. L'Open continua creixent, gràcies al suport de l'Ajuntament i els Patronats de Torredembarra i dels nostres col·laboradors privats. Us animem a participar-hi i també a acostar-vos al nostre local social, al <span class="adreca-local">Casal Municipal, carrer Capella, 6</span>.</p>
+                </section>
+
+                <section id="junta-directiva">
+                    <h3>👥 <span class="titol-junta">Junta directiva</span> (<span class="periode-junta">2022-2026</span>)</h2>
+                    <p>La junta directiva de l'entitat, renovada a començaments del 2022, està formada per:</p>
+
+                    <ul class="llista-junta">
+                        <li class="membre-junta"><span class="carrec">President:</span> <span class="nom-membre">Josep Romeu de la Cruz</span></li>
+                        <li class="membre-junta"><span class="carrec">Secretari:</span> <span class="nom-membre">Josep Antoni Nieves Alarcón</span></li>
+                        <li class="membre-junta"><span class="carrec">Tresorer:</span> <span class="nom-membre">Xavier Galimany Rovira</span></li>
+                        <li class="membre-junta">
+                            <span class="carrec">Vocals:</span>
+                            <ul class="llista-vocals">
+                                <li class="vocal"><span class="nom-vocal">Jordi Salvat Rovira</span></li>
+                                <li class="vocal"><span class="nom-vocal">Ferran Bechini Bossons</span></li>
+                                <li class="vocal"><span class="nom-vocal">Jordi Pons Morlanes</span></li>
+                            </ul>
+                        </li>
+                    </ul>
             </main>
 
             <!-- 4. ASIDE: Barra lateral (Columna dreta o abaix) -->
@@ -142,7 +160,7 @@
                     <div class="footer-text">
                         <p>Club d'Escacs Torredembarra</p>
                         <p>Carrer de Sant Jordi, 1, 43830 Torredembarra, Tarragona</p>
-                        <p>Email: <span class="email">escacstorre1@gmail.com</span></p>
+                        <p>Email: <a href="mailto:escacstorre1@gmail.com"><span class="email">escacstorre1@gmail.com</span></a></p>
                     </div>
                 </div>
 
@@ -189,7 +207,7 @@
         <script>
             // Actualizar año automáticamente
             document.getElementById("year").textContent = new Date().getFullYear();
-        </script>
+        </script> 
 
     </body>
 </html>
