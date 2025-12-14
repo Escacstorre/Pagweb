@@ -22,7 +22,7 @@
 
   function showBannerIfNeeded(){
     if(!getConsent()){
-      banner.style.display = 'block';
+      banner.style.display = 'flex';
     }
   }
 

@@ -509,7 +509,16 @@ body > div {
 main {
     flex: 3 1 40rem; 
 }
+main h1 {
+    color: var(--color-primari);
+    border-bottom: 0.125rem solid var(--color-vora);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+}
+
 main h2 {
+    margin-top: 1.5rem;
     color: var(--color-primari);
     border-bottom: 0.125rem solid var(--color-vora);
     padding-bottom: 0.5rem;
@@ -893,5 +902,72 @@ footer {
     .social-icons-grid {
         justify-content: center;
         max-width: 100%;
+    }
+}
+
+/* --- 6. COOKIE  --- */
+#cookie-banner {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    background-color: var(--color-fons-panell);
+    border: 0.0625rem solid var(--color-vora);
+    padding: 1.5rem;
+    z-index: 9999;
+    box-shadow: var(--ombra);
+    border-radius: 0.5rem;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#cookie-banner div {
+    font-size: 0.95rem;
+    color: var(--color-text-secundari);
+}
+
+#cookie-banner a {
+    color: var(--color-primari);
+    text-decoration: underline;
+}
+
+#cookie-banner a:hover {
+    color: var(--color-primari-hover);
+}
+
+#cookie-banner button {
+    padding: 0.7rem 1.3rem;
+    border-radius: 0.375rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#cookie-accept {
+    background-color: var(--color-accent-fons);
+    color: var(--color-text-invers);
+}
+
+#cookie-accept:hover {
+    background-color: var(--color-accent-hover);
+}
+
+#cookie-reject {
+    background-color: var(--color-fons-gris);
+    color: var(--color-text-secundari);
+}
+
+#cookie-reject:hover {
+    background-color: var(--color-vora);
+}
+
+@media (max-width: 48em) {
+    #cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
     }
 }
