@@ -532,7 +532,7 @@ article {
     box-shadow: var(--ombra-petita);
 }
 
-video, img {
+article video, img {
     width: 100%;
     border-radius: 0.5rem;
     box-shadow: var(--ombra-petita);
