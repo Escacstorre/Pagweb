@@ -10,7 +10,7 @@
     </head>
     <body>
         <!-- Checkbox per al canvi de tema (clar/fosc) -->
-        <input type="checkbox" id="Canvi-theme" class="theme-checkbox" autocomplete="off"> 
+        <input type="checkbox" id="Canvi-theme" class="theme-checkbox"> 
         <!-- 1. NAV: Barra de navegació superior -->
         <nav>
             <!-- A. Logo -->
@@ -114,7 +114,7 @@
             <!-- 3. MAIN: Contingut principal (Columna esquerra o adalt) -->
             <main>
                 <h2>Inscripcions</h2>
-                <form class="formulari-inscripcio" action="#" method="post">
+                <form id="inscripcions-form" class="formulari-inscripcio" action="#" method="post">
                     <fieldset>
                         <legend>Campionat<span class="required">*</span></legend>
                         <div>
@@ -156,7 +156,9 @@
                         <span>Enviar Inscripció</span>
                         <span class="icono-enviar" role="img" aria-label="Enviar" title="Enviar"></span>
                     </button>
+                    <label style="display:block;margin-top:1rem"><input type="checkbox" id="consent-inscripcio" required> He llegit i accepto la <a href="../Privadesa.html">Política de privadesa</a></label>
                 </form>
+                <div id="inscripcio-msg" aria-live="polite" style="margin-top:1rem"></div>
             </main>
 
             <!-- 4. ASIDE: Barra lateral (Columna dreta o abaix) -->
@@ -227,6 +229,29 @@
             // Actualizar año automáticamente
             document.getElementById("year").textContent = new Date().getFullYear();
         </script> 
+        <div id="cookie-banner" style="position:fixed;left:1rem;right:1rem;bottom:1rem;background:#fff;border:1px solid #ddd;padding:1rem;display:none;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+                <div>Utilitzem cookies pròpies i de tercers per millorar l'experiència. <a href="Politiques_cookies.html">Més informació</a></div>
+                <div>
+                    <button id="cookie-accept" style="margin-right:.5rem">Acceptar</button>
+                    <button id="cookie-reject">Rebutjar</button>
+                </div>
+            </div>
+        </div>
+        <script src="../../Assets/js/consent.js"></script>
+        <script>
+            document.getElementById('inscripcions-form').addEventListener('submit', function(e){
+                var consent = document.getElementById('consent-inscripcio');
+                if(!consent.checked){
+                    e.preventDefault();
+                    document.getElementById('inscripcio-msg').textContent = 'Cal acceptar la política de privadesa per inscriure''s.';
+                    return;
+                }
+                if(window.recordFormConsent) window.recordFormConsent();
+                // En aquest exemple no hi ha backend; es pot enviar per mail o guardar localment
+                document.getElementById('inscripcio-msg').textContent = 'Inscripció processada (placeholder).';
+            });
+        </script>
 
     </body>
 </html>

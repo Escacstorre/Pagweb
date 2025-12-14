@@ -243,5 +243,54 @@ aside img {
     max-width: 26rem;
     aspect-ratio: 30/35;
     border: 0;
+    background: transparent;
     box-shadow: var(--ombra);
+}
+
+/* --- Secció Campionats --- */
+.campionats-seccio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.campionats-seccio a {
+    display: block;
+    flex: 1 1 18rem;
+    width: min(30rem, 45%);
+    max-width: 30rem;
+    text-align: center;
+    aspect-ratio: 1 / 1;
+    min-height: 12rem; /* fallback si no soporta aspect-ratio */
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: var(--ombra);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.campionats-seccio a img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0; /* el radio lo gestiona el contenedor */
+    box-shadow: none; /* la sombra la aplica el contenedor para alinear */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    object-fit: cover;
+    display: block;
+}
+
+.campionats-seccio a:hover img {
+    filter: brightness(1.03);
+}
+
+.campionats-seccio a:hover {
+    box-shadow: var(--ombra-petita);
+    transform: translateY(-0.3125rem);
+}
+
+@media (max-width: 40em) {
+    .campionats-seccio { gap: 1rem; }
+    .campionats-seccio a { width: 100%; flex-basis: 100%; max-width: 100%; }
 }

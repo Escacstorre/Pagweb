@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html lang="ca">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Club d'Escacs de Torredembarra</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Contacta - Club d'Escacs de Torredembarra</title>
+                <meta name="description" content="Contacta amb el Club d'Escacs Torredembarra. Horari i formulari de contacte amb consentiment de privadesa.">
+                <link rel="canonical" href="https://escacs-torredembarra.cat/pages/Contacta.html">
+                <meta name="robots" content="index, follow">
+                <script type="application/ld+json">
+                {
+                    "@context":"https://schema.org",
+                    "@type":"WebPage",
+                    "name":"Contacta",
+                    "description":"Pàgina de contacte del Club d'Escacs Torredembarra"
+                }
+                </script>
         <link rel="stylesheet" type="text/css" media="screen" href="../Assets/css/style.css">
         <link rel="stylesheet" type="text/css" media="screen" href="../Assets/css/main.css">
         <link rel="icon" href="../Assets/Img/Logo/Club_d_Escacs_Torredembarra_torre.webp" type="image/png">
@@ -11,7 +22,7 @@
     </head>
     <body>
         <!-- Checkbox per al canvi de tema (clar/fosc) -->
-        <input type="checkbox" id="Canvi-theme" class="theme-checkbox" autocomplete="off"> 
+        <input type="checkbox" id="Canvi-theme" class="theme-checkbox"> 
         <!-- 1. NAV: Barra de navegació superior -->
         <nav>
             <!-- A. Logo -->
@@ -147,6 +158,17 @@
                     <h3>Mapa</h3>
                     <iframe class="Mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1502.3001412559988!2d1.4000759252994912!3d41.14325108944996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3f0523d113cab%3A0x818eaee93a0ec254!2sCarrer+de+la+Capella%2C+6%2C+43830+Torredembarra%2C+Tarragona!5e0!3m2!1ses!2ses!4v1449678976982" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </section>
+                <section>
+                    <h3>Formulari de contacte</h3>
+                    <form id="contact-form">
+                        <label>Nom:<br><input type="text" name="name" id="name" required></label><br>
+                        <label>Email:<br><input type="email" name="email" id="email" required></label><br>
+                        <label>Missatge:<br><textarea name="message" id="message" required></textarea></label><br>
+                        <label><input type="checkbox" id="consent" required> He llegit i accepto la <a href="Privadesa.html">Política de privadesa</a></label><br>
+                        <button type="submit">Enviar</button>
+                    </form>
+                    <div id="contact-msg" aria-live="polite" style="margin-top:1rem"></div>
+                </section>
             </main>
 
             <!-- 4. ASIDE: Barra lateral (Columna dreta o abaix) -->
@@ -209,6 +231,7 @@
             <div class="footer-bottom">
                 <p>Desenvolupat per: <strong>Joel Romeu</strong></p>
                 <p>&copy; 2013 - <span id="year"></span> Club d'Escacs Torredembarra. Tots els drets reservats.</p>
+                <p><a href="Privadesa.html">Política de privadesa</a> · <a href="Politiques_cookies.html">Política de cookies</a></p>
             </div>
         </footer>
 
@@ -217,6 +240,35 @@
             // Actualizar año automáticamente
             document.getElementById("year").textContent = new Date().getFullYear();
         </script> 
+        <script src="../Assets/js/consent.js"></script>
+        <script>
+            document.getElementById('contact-form').addEventListener('submit', function(e){
+                e.preventDefault();
+                var consent = document.getElementById('consent');
+                if(!consent.checked){
+                    document.getElementById('contact-msg').textContent = 'Cal acceptar la política de privadesa per enviar el formulari.';
+                    return;
+                }
+                // Record consent locally (per RGPD guardable al servidor si n'hi ha)
+                if(window.recordFormConsent) window.recordFormConsent();
+                // Enviar amb mailto (alternativa sense servidor)
+                var name = encodeURIComponent(document.getElementById('name').value);
+                var email = encodeURIComponent(document.getElementById('email').value);
+                var msg = encodeURIComponent(document.getElementById('message').value);
+                var body = 'Nom: '+name+'%0AEmail: '+email+'%0A%0A'+msg;
+                window.location.href = 'mailto:escacstorre1@gmail.com?subject=Consulta%20web&body='+body;
+                document.getElementById('contact-msg').textContent = 'Missatge preparat per enviar. Obrint el teu gestor de correu...';
+            });
+        </script>
+        <div id="cookie-banner" style="position:fixed;left:1rem;right:1rem;bottom:1rem;background:#fff;border:1px solid #ddd;padding:1rem;display:none;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+                <div>Utilitzem cookies pròpies i de tercers per millorar l'experiència. <a href="Politiques_cookies.html">Més informació</a></div>
+                <div>
+                    <button id="cookie-accept" style="margin-right:.5rem">Acceptar</button>
+                    <button id="cookie-reject">Rebutjar</button>
+                </div>
+            </div>
+        </div>
 
     </body>
 </html>

@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="ca">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Club d'Escacs de Torredembarra</title>
-        <link rel="stylesheet" type="text/css" media="screen" href="../../Assets/css/style.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="../../Assets/css/main.css">
-        <link rel="icon" href="../../Assets/Img/Logo/Club_d_Escacs_Torredembarra_torre.webp" type="image/png">
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Calendari - Club d'Escacs Torredembarra</title>
+                <meta name="description" content="Calendari d'esdeveniments i tornejos del Club d'Escacs Torredembarra.">
+                <link rel="canonical" href="https://escacs-torredembarra.cat/pages/Campionats/Calendari.html">
+                <meta name="robots" content="index, follow">
+                <link rel="stylesheet" type="text/css" media="screen" href="../../Assets/css/style.css">
+                <link rel="stylesheet" type="text/css" media="screen" href="../../Assets/css/main.css">
+                <link rel="icon" href="../../Assets/Img/Logo/Club_d_Escacs_Torredembarra_torre.webp" type="image/png">
+                <script type="application/ld+json">
+                {
+                    "@context":"https://schema.org",
+                    "@type":"WebPage",
+                    "name":"Calendari",
+                    "description":"Calendari d'esdeveniments i tornejos del Club"
+                }
+                </script>
     </head>
     <body>
         <!-- Checkbox per al canvi de tema (clar/fosc) -->
-        <input type="checkbox" id="Canvi-theme" class="theme-checkbox" autocomplete="off">
+        <input type="checkbox" id="Canvi-theme" class="theme-checkbox">
         <!-- 1. NAV: Barra de navegació superior -->
         <nav>
             <!-- A. Logo -->
@@ -114,7 +125,7 @@
             <!-- 3. MAIN: Contingut principal (Columna esquerra o adalt) -->
             <main>
                 <h2>Calendari</h2>
-                <iframe frameborder="0" scrolling="no" src="https://calendar.google.com/calendar/embed?height=800&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FMadrid&amp;showTitle=0&amp;showCalendars=0&amp;hl=ca&amp;showDate=1&amp;showNav=1&amp;showTabs=0&amp;showPrint=0&amp;showTz=0&amp;src=ZWRucm9pdWVzbDdnYXBuOTlwM211bmFrcWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23D50000" style="width:100%; aspect-ratio:1/1;"></iframe>
+                <iframe src="https://calendar.google.com/calendar/embed?height=800&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FMadrid&amp;showTitle=0&amp;showCalendars=0&amp;hl=ca&amp;showDate=1&amp;showNav=1&amp;showTabs=0&amp;showPrint=0&amp;showTz=0&amp;src=ZWRucm9pdWVzbDdnYXBuOTlwM211bmFrcWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23D50000" title="Calendari" style="width:100%; aspect-ratio:1/1; border:0; overflow:hidden;"></iframe>
             </main>
 
             <!-- 4. ASIDE: Contingut secundari (Columna dreta o abaix) -->
@@ -177,6 +188,7 @@
             <div class="footer-bottom">
                 <p>Desenvolupat per: <strong>Joel Romeu</strong></p>
                 <p>&copy; 2013 - <span id="year"></span> Club d'Escacs Torredembarra. Tots els drets reservats.</p>
+                <p><a href="../Privadesa.html">Política de privadesa</a> · <a href="../Politiques_cookies.html">Política de cookies</a></p>
             </div>
         </footer>
 
@@ -185,6 +197,16 @@
             // Actualizar año automáticamente
             document.getElementById("year").textContent = new Date().getFullYear();
         </script>
+        <div id="cookie-banner" style="position:fixed;left:1rem;right:1rem;bottom:1rem;background:#fff;border:1px solid #ddd;padding:1rem;display:none;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+                <div>Utilitzem cookies pròpies i de tercers per millorar l'experiència. <a href="Politiques_cookies.html">Més informació</a></div>
+                <div>
+                    <button id="cookie-accept" style="margin-right:.5rem">Acceptar</button>
+                    <button id="cookie-reject">Rebutjar</button>
+                </div>
+            </div>
+        </div>
+        <script src="../../Assets/js/consent.js"></script>
 
     </body>
 </html>

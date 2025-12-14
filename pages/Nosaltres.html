@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="ca">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Club d'Escacs de Torredembarra</title>
-        <link rel="stylesheet" type="text/css" media="screen" href="../Assets/css/style.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="../Assets/css/main.css">
-        <link rel="icon" href="../Assets/Img/Logo/Club_d_Escacs_Torredembarra_torre.webp" type="image/png">
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Sobre Nosaltres - Club d'Escacs Torredembarra</title>
+                <meta name="description" content="Coneix la història, la junta directiva i la trajectòria del Club d'Escacs Torredembarra.">
+                <link rel="canonical" href="https://escacs-torredembarra.cat/pages/Nosaltres.html">
+                <meta name="robots" content="index, follow">
+                <link rel="stylesheet" type="text/css" media="screen" href="../Assets/css/style.css">
+                <link rel="stylesheet" type="text/css" media="screen" href="../Assets/css/main.css">
+                <link rel="icon" href="../Assets/Img/Logo/Club_d_Escacs_Torredembarra_torre.webp" type="image/png">
+                <script type="application/ld+json">
+                {
+                    "@context":"https://schema.org",
+                    "@type":"AboutPage",
+                    "name":"Sobre Nosaltres",
+                    "description":"Informació sobre el Club d'Escacs Torredembarra i la seva junta directiva."
+                }
+                </script>
         
     </head>
     <body>
         <!-- Checkbox per al canvi de tema (clar/fosc) -->
-        <input type="checkbox" id="Canvi-theme" class="theme-checkbox" autocomplete="off"> 
+        <input type="checkbox" id="Canvi-theme" class="theme-checkbox"> 
         <!-- 1. NAV: Barra de navegació superior -->
         <nav>
             <!-- A. Logo -->
@@ -138,6 +149,7 @@
                             </ul>
                         </li>
                     </ul>
+                </section>
             </main>
 
             <!-- 4. ASIDE: Barra lateral (Columna dreta o abaix) -->
@@ -200,6 +212,7 @@
             <div class="footer-bottom">
                 <p>Desenvolupat per: <strong>Joel Romeu</strong></p>
                 <p>&copy; 2013 - <span id="year"></span> Club d'Escacs Torredembarra. Tots els drets reservats.</p>
+                <p><a href="Privadesa.html">Política de privadesa</a> · <a href="Politiques_cookies.html">Política de cookies</a></p>
             </div>
         </footer>
 
@@ -208,6 +221,16 @@
             // Actualizar año automáticamente
             document.getElementById("year").textContent = new Date().getFullYear();
         </script> 
+        <div id="cookie-banner" style="position:fixed;left:1rem;right:1rem;bottom:1rem;background:#fff;border:1px solid #ddd;padding:1rem;display:none;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+                <div>Utilitzem cookies pròpies i de tercers per millorar l'experiència. <a href="Politiques_cookies.html">Més informació</a></div>
+                <div>
+                    <button id="cookie-accept" style="margin-right:.5rem">Acceptar</button>
+                    <button id="cookie-reject">Rebutjar</button>
+                </div>
+            </div>
+        </div>
+        <script src="../Assets/js/consent.js"></script>
 
     </body>
 </html>
