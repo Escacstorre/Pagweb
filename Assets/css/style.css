@@ -532,6 +532,14 @@ article {
     box-shadow: var(--ombra-petita);
 }
 
+video, img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: var(--ombra-petita);
+    margin-bottom: 1rem;
+    aspect-ratio: 16 / 9;
+}
+
 a{
     text-decoration: none;
     color: var(--color-primari);
