@@ -910,7 +910,7 @@ footer {
     position: fixed;
     left: 1rem;
     right: 1rem;
-    bottom: 1rem;
+    bottom: 0.1rem;
     background-color: var(--color-fons-panell);
     border: 0.0625rem solid var(--color-vora);
     padding: 1.5rem;
@@ -918,14 +918,31 @@ footer {
     box-shadow: var(--ombra);
     border-radius: 0.5rem;
     display: none;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
 }
 
-#cookie-banner div {
+/* Este es el contenedor principal dentro del banner */
+#cookie-banner > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Este es el contenedor del text */
+#cookie-banner > div > div:first-child {
     font-size: 0.95rem;
     color: var(--color-text-secundari);
+    align-self: flex-start;
+}
+
+/* Este es el contenedor de los botones */
+#cookie-banner > div > div:last-child {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    align-self: flex-end;
 }
 
 #cookie-banner a {
@@ -964,10 +981,18 @@ footer {
     background-color: var(--color-vora);
 }
 
-@media (max-width: 48em) {
-    #cookie-banner {
+@media (max-width: 64em) {
+    /* En pantalles petites, apilem el contingut */
+    #cookie-banner > div {
         flex-direction: column;
+        align-items: center;
         text-align: center;
-        gap: 1rem;
+    }
+    #cookie-banner > div > div:first-child {
+        order: 1;
+    }
+    #cookie-banner > div > div:last-child {
+        order: 2;
+        align-self: center;
     }
 }
