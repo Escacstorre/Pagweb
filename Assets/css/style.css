@@ -507,7 +507,8 @@ body > div {
 
 /* --- 3. MAIN --- */
 main {
-    flex: 3 1 40rem; 
+    flex: 3 1 40rem;
+    min-width: 0;
 }
 main h1 {
     color: var(--color-primari);
@@ -518,7 +519,6 @@ main h1 {
 }
 
 main h2 {
-    margin-top: 1.5rem;
     color: var(--color-primari);
     border-bottom: 0.125rem solid var(--color-vora);
     padding-bottom: 0.5rem;
@@ -527,6 +527,12 @@ main h2 {
 }
 
 main h3 {
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+article h3, article h4, article h2 {
     margin-bottom: 0.5rem;
     margin-top: 1.5rem;
     font-size: 1.1rem;
@@ -566,6 +572,15 @@ iframe {
     border: none;
     border-radius: 0.5rem;
     box-shadow: var(--ombra-petita);
+}
+
+section {
+    background: var(--color-fons-panell);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid var(--color-vora);
+    box-shadow: var(--ombra-petita);
+    margin-bottom: 1rem;
 }
 
 /* --- Secció Formulari (Genèric) --- */

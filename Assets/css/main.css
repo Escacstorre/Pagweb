@@ -5,7 +5,7 @@
     margin-bottom: 2rem;
 }
 
-.noticies-grid h3 {
+.noticies-grid h2 {
     grid-column: 1 / -1;
     width: 100%;
     margin-bottom: 0.5rem;
@@ -52,6 +52,17 @@
 .noticies-grid article:hover img {
     filter: brightness(1.05);
 }
+
+/* --- Secció Destacats --- */
+.destacats-seccio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
 
 /* --- Secció Taules --- */
 .taula-scroll-contenidor {
@@ -184,6 +195,20 @@
 }
 
 .titol-principal {
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-primari);
+}
+
+.titol-junta {
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-primari);
+}
+
+.periode-junta {
     display: inline-block;
     font-size: 1.125rem;
     font-weight: 700;
