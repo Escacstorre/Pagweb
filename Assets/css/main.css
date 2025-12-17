@@ -63,6 +63,13 @@
     margin-top: 1rem;
 }
 
+.destacats-seccio h2 {
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--color-primari);
+}
+
 
 /* --- Secció Taules --- */
 .taula-scroll-contenidor {

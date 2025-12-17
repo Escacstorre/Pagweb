@@ -57,7 +57,11 @@
     display: none;
 }
 
-/* --- 1. Modo oscuro --- */
+/* --- 1. Lògica de Temes (Clar/Fosc) --- */
+
+/* 1a. Per defecte, s'utilitza el tema clar (definit a :root) */
+
+/* 1b. Tema Fosc Manual (quan el checkbox està marcat) */
 body:has(#Canvi-theme:checked) {
     --color-fons-pagina: #111827; 
     --color-fons-panell: #1f2937;
@@ -71,16 +75,12 @@ body:has(#Canvi-theme:checked) {
     --color-text-invers: #f3f4f6; 
     --color-vora: #4b5563;
     --color-fons-fosc: #1f2937;
-
     --color-social-fons: #374151;
     --color-social-icon: #f3f4f6;
-
-    /* Footer en Mode Fosc */
     --color-footer-fons: #1f2937;
     --color-footer-titol: #f9fafb;
     --color-footer-text: #d1d5db;
     --color-footer-vora: #374151;
-
     --ombra: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.5);
 
     background-color: var(--color-fons-pagina);
@@ -91,9 +91,10 @@ body:has(#Canvi-theme:checked) .nav-logo a {
     color: white;
 }
 
-/* 1.b Inicial segons la preferència del sistema sense sobreescriure el toggle manual */
+/* 1c. Lògica per a quan el sistema operatiu està en mode fosc */
 @media (prefers-color-scheme: dark) {
-    /* Només aplica si l'usuari NO té el checkbox marcat */
+
+    /* Per defecte (sense tocar el botó), la pàgina es mostra en fosc */
     body:not(:has(#Canvi-theme:checked)) {
         --color-fons-pagina: #111827; 
         --color-fons-panell: #1f2937;
@@ -107,48 +108,92 @@ body:has(#Canvi-theme:checked) .nav-logo a {
         --color-text-invers: #f3f4f6; 
         --color-vora: #4b5563;
         --color-fons-fosc: #1f2937;
-
         --color-social-fons: #374151;
         --color-social-icon: #f3f4f6;
-
-        /* Footer en Mode Fosc */
         --color-footer-fons: #1f2937;
         --color-footer-titol: #f9fafb;
         --color-footer-text: #d1d5db;
         --color-footer-vora: #374151;
-
         --ombra: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.5);
 
         background-color: var(--color-fons-pagina);
         color: var(--color-text-principal);
     }
-
-    /* Icona logo quan el sistema prefereix fosc i el checkbox NO està marcat */
+    
     body:not(:has(#Canvi-theme:checked)) .nav-logo a {
         color: white;
     }
+
+    /* Si l'usuari prem el botó (checked), forcem el tema clar */
+    body:has(#Canvi-theme:checked) {
+        --color-primari: #3FA9F5;
+        --color-primari-hover: #2b8ecc;
+        --color-text-principal: #333333;
+        --color-text-secundari: #4b5563;
+        --color-text-suau: #9ca3af;
+        --color-text-invers: white;
+        --color-fons-pagina: white;
+        --color-fons-panell: white;
+        --color-fons-clar: #f9fafb;
+        --color-fons-fosc: #1f2937;
+        --color-fons-gris: #f3f4f6;
+        --color-accent-fons: #3FA9F5;
+        --color-accent-hover: #2b8ecc;
+        --color-vora: #e5e7eb;
+        --ombra: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1);
+        --color-social-fons: #ffffff;
+        --color-social-icon: #374151;
+        --color-footer-fons: #e6e6e6;
+        --color-footer-titol: #111827;
+        --color-footer-text: #4b5563;
+        --color-footer-vora: #d1d5db;
+    }
+
+    body:has(#Canvi-theme:checked) .nav-logo a {
+        color: var(--color-fons-fosc);
+    }
 }
 
-/* 1. Por defecto (Modo Claro) */
-.icon-sun, .icon-sun-mobile { display: none; } /* Sol oculto */
-.icon-moon, .icon-moon-mobile { display: block; } /* Luna visible */
-.text-clar { display: none; } /* Texto "Mode Clar" oculto */
-.text-fosc { display: block; } /* Texto "Mode Fosc" visible */
+/* --- Lògica dels icones i textos del botó --- */
 
-/* 2. Cuando está marcado (Modo Oscuro) */
-body:has(#Canvi-theme:checked) .icon-sun { display: block; }
-body:has(#Canvi-theme:checked) .icon-moon { display: none; }
+/* Per defecte (tema clar) -> es mostra la lluna per anar a fosc */
+.icon-sun, .icon-sun-mobile { display: none; }
+.icon-moon, .icon-moon-mobile { display: block; }
+.text-clar { display: none; }
+.text-fosc { display: block; }
 
-/* Iconos Móvil */
-body:has(#Canvi-theme:checked) .icon-sun-mobile { 
-    display: block; 
-    color: var(--color-primari); /* Sol azul en móvil */
-}
+/* Quan es fa clic (checked) -> es mostra el sol per anar a clar */
+body:has(#Canvi-theme:checked) .icon-sun,
+body:has(#Canvi-theme:checked) .icon-sun-mobile { display: block; }
+body:has(#Canvi-theme:checked) .icon-moon,
 body:has(#Canvi-theme:checked) .icon-moon-mobile { display: none; }
-
-/* Textos Móvil */
 body:has(#Canvi-theme:checked) .text-fosc { display: none; }
 body:has(#Canvi-theme:checked) .text-clar { display: block; }
+
+/* Excepció per a SO en mode fosc: invertim la lògica dels icones */
+@media (prefers-color-scheme: dark) {
+    /* Per defecte (la pàgina està fosca) -> es mostra el sol per anar a clar */
+    body:not(:has(#Canvi-theme:checked)) .icon-sun,
+    body:not(:has(#Canvi-theme:checked)) .icon-sun-mobile { display: block; }
+    body:not(:has(#Canvi-theme:checked)) .icon-moon,
+    body:not(:has(#Canvi-theme:checked)) .icon-moon-mobile { display: none; }
+    body:not(:has(#Canvi-theme:checked)) .text-fosc { display: none; }
+    body:not(:has(#Canvi-theme:checked)) .text-clar { display: block; }
+
+    /* Si es fa clic (la pàgina es posa clara) -> es mostra la lluna per anar a fosc */
+    body:has(#Canvi-theme:checked) .icon-sun,
+    body:has(#Canvi-theme:checked) .icon-sun-mobile { display: none; }
+    body:has(#Canvi-theme:checked) .icon-moon,
+    body:has(#Canvi-theme:checked) .icon-moon-mobile { display: block; }
+    body:has(#Canvi-theme:checked) .text-fosc { display: block; }
+    body:has(#Canvi-theme:checked) .text-clar { display: none; }
+}
+
+/* Estils addicionals del botó */
+body:has(#Canvi-theme:checked) .icon-sun-mobile { 
+    color: var(--color-primari);
+}
+
 
 /* Icono Enviar en Formularios */
 body:has(#Canvi-theme:checked) form button[type="submit"] .icono-enviar,
