@@ -4,15 +4,89 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contacta - Club d'Escacs de Torredembarra</title>
-        <meta name="description" content="Contacta amb el Club d'Escacs Torredembarra. Horari i formulari de contacte amb consentiment de privadesa.">
-        <link rel="canonical" href="https://escacs-torredembarra.cat/pages/Contacta.html">
+        <meta name="description" content="Contacta amb el Club d'Escacs Torredembarra. Consulta el nostre horari, mapa de localització i informació de contacte.">
+        <meta name="author" content="Joel Romeu">
+        <meta name="keywords" content="Contacte, Escacs, Torredembarra, Club, Horari, Mapa, Localització">
+        <link rel="canonical" href="https://escacstorre.github.io/Pagweb/pages/Contacta.html">
         <meta name="robots" content="index, follow">
+        <!-- Open Graph -->
+        <meta property="og:site_name" content="Club d'Escacs Torredembarra">
+        <meta property="og:title" content="Contacta - Club d'Escacs de Torredembarra">
+        <meta property="og:description" content="Contacta amb el Club d'Escacs Torredembarra. Consulta el nostre horari, mapa de localització i informació de contacte.">
+        <meta property="og:url" content="https://escacstorre.github.io/Pagweb/pages/Contacta.html">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://escacstorre.github.io/Pagweb/Assets/Img/Logo/Club_d_Escacs_Torredembarra_torre.webp">
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Contacta - Club d'Escacs de Torredembarra">
+        <meta name="twitter:description" content="Contacta amb el Club d'Escacs Torredembarra. Consulta el nostre horari, mapa de localització i informació de contacte.">
+        <meta name="twitter:image" content="https://escacstorre.github.io/Pagweb/Assets/Img/Logo/Club_d_Escacs_Torredembarra_torre.webp">
+        <!-- Schema.org -->
         <script type="application/ld+json">
         {
-            "@context":"https://schema.org",
-            "@type":"WebPage",
-            "name":"Contacta",
-            "description":"Pàgina de contacte del Club d'Escacs Torredembarra"
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "ContactPage",
+                    "name": "Contacta amb el Club d'Escacs Torredembarra",
+                    "description": "Troba la nostra informació de contacte, horaris i ubicació.",
+                    "isPartOf": {
+                        "@type": "WebSite",
+                        "url": "https://escacstorre.github.io/Pagweb",
+                        "name": "Club d'Escacs Torredembarra"
+                    },
+                    "mainEntity": {
+                        "@type": "SportsClub",
+                        "name": "Club d'Escacs Torredembarra",
+                        "url": "https://escacstorre.github.io/Pagweb",
+                        "logo": "https://escacstorre.github.io/Pagweb/Assets/Img/Logo/Club_d_Escacs_Torredembarra_torre.webp",
+                        "email": "escacstorre1@gmail.com",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Carrer de la Capella, 6",
+                            "addressLocality": "Torredembarra",
+                            "postalCode": "43830",
+                            "addressRegion": "Tarragona",
+                            "addressCountry": "ES"
+                        },
+                        "openingHoursSpecification": [
+                            {
+                                "@type": "OpeningHoursSpecification",
+                                "dayOfWeek": [
+                                    "Friday"
+                                ],
+                                "opens": "18:00",
+                                "closes": "20:00"
+                            }
+                        ],
+                        "sameAs": [
+                            "https://www.facebook.com/profile.php?id=61577193958142",
+                            "https://x.com/Escacs_Torre",
+                            "https://www.instagram.com/escacs_torredembarra/",
+                            "https://kick.com/escacs-torredembarra",
+                            "https://www.youtube.com/@EscacsTorredembarra",
+                            "https://www.twitch.tv/escacs_torredembarra"
+                        ]
+                    }
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Inici",
+                            "item": "https://escacstorre.github.io/Pagweb/index.html"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Contacta",
+                            "item": "https://escacstorre.github.io/Pagweb/pages/Contacta.html"
+                        }
+                    ]
+                }
+            ]
         }
         </script>
         <link rel="stylesheet" type="text/css" media="screen" href="../Assets/css/style.css">
@@ -179,7 +253,7 @@
                     </div>
                     <div class="footer-text">
                         <p>Club d'Escacs Torredembarra</p>
-                        <p>Carrer de Sant Jordi, 1, 43830 Torredembarra, Tarragona</p>
+                        <p>Carrer de la Capella, 6, 43830 Torredembarra, Tarragona</p>
                         <p>Email: <a href="mailto:escacstorre1@gmail.com"><span class="email">escacstorre1@gmail.com</span></a></p>
                     </div>
                 </div>
@@ -241,25 +315,6 @@
             document.getElementById("year").textContent = new Date().getFullYear();
         </script> 
         <script src="../Assets/js/consent.js"></script>
-        <script>
-            document.getElementById('contact-form').addEventListener('submit', function(e){
-                e.preventDefault();
-                var consent = document.getElementById('consent');
-                if(!consent.checked){
-                    document.getElementById('contact-msg').textContent = 'Cal acceptar la política de privadesa per enviar el formulari.';
-                    return;
-                }
-                // Record consent locally (per RGPD guardable al servidor si n'hi ha)
-                if(window.recordFormConsent) window.recordFormConsent();
-                // Enviar amb mailto (alternativa sense servidor)
-                var name = encodeURIComponent(document.getElementById('name').value);
-                var email = encodeURIComponent(document.getElementById('email').value);
-                var msg = encodeURIComponent(document.getElementById('message').value);
-                var body = 'Nom: '+name+'%0AEmail: '+email+'%0A%0A'+msg;
-                window.location.href = 'mailto:escacstorre1@gmail.com?subject=Consulta%20web&body='+body;
-                document.getElementById('contact-msg').textContent = 'Missatge preparat per enviar. Obrint el teu gestor de correu...';
-            });
-        </script>
         
     </body>
 </html>
