@@ -1,3 +1,5 @@
+/* --- Secció Notícies --- */
+
 .noticies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
@@ -53,23 +55,44 @@
     filter: brightness(1.05);
 }
 
-/* --- Secció Destacats --- */
+/* -- Estils Secció Destacats --*/
+
 .destacats-seccio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 1.5rem;
-    margin-top: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem; /* 24px */
+  border-top: 0.0625rem solid var(--color-vora); /* 1px */
 }
 
 .destacats-seccio h2 {
-    width: 100%;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    width: 100%; /* 16px */
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
     color: var(--color-primari);
 }
 
+.destacats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 1.5rem;
+}
+
+.destacat-card a {
+  display: block;
+  overflow: hidden; /* Per contenir la imatge a l'escalar */
+  border-radius: 0.5rem; /* 8px */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destacat-card a:hover {
+  transform: translateY(-0.3125rem); /* -5px */
+  box-shadow: var(--ombra);
+}
+
+.destacat-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* --- Secció Taules --- */
 .taula-scroll-contenidor {
@@ -241,7 +264,7 @@
 }
 
 .membre-junta:hover {
-    background-color: var(--color-fons-gris);
+    background-color: var(--color-fons-gris); /* 2px */
     border-left: 0.25rem solid var(--color-primari);
     transform: translateY(-2px);
 }
